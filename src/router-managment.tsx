@@ -16,7 +16,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'routing-template',
-                element: <Home/>
+                element: <Navigate to="/" replace/>
             },
             {
                 path: "component1",
