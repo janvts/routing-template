@@ -55,8 +55,9 @@ But if you do it this way don't forget to change the index.tsx!
 
 ##  2)  Root component
 
-You have to declare a root component (here called "home.tsx") for the root path "/" wich typically contains a part of your application that should always be rendered.
+You have to declare a root component (here called "home.tsx") for the root path wich typically contains a part of your application that should always be rendered.
 For example, in this application it has to contain the top menu where you can choose the different components from.
+
 Important: When writing the home component you need to declare where exactly the children components should be rendered inside the home component via the placement of the ````<Outlet/>````  (Look into home.tsx).
 
 
