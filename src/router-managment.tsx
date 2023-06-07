@@ -7,6 +7,7 @@ import ErrorPage from "./components/error-page";
 import {Component1} from "./components/component1";
 import {Component2} from "./components/component2";
 
+const homepageUrl = process.env.PUBLIC_URL;
 const router = createBrowserRouter([
 
     {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
         children: [
             {
                 path: 'routing-template',
-                element: <Navigate to="/" replace/>
+                element: <Component1></Component1>
             },
             {
                 path: "component1",
