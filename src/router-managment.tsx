@@ -11,20 +11,16 @@ const homepageUrl = process.env.PUBLIC_URL;
 const router = createBrowserRouter([
 
     {
-        path: "/",
+        path: `${homepageUrl}`,
         element: <Home/>,
         errorElement: <ErrorPage/>,
         children: [
             {
-                path: 'routing-template',
+                path: `${homepageUrl}/component1`,
                 element: <Component1></Component1>
             },
             {
-                path: "component1",
-                element: <Component1></Component1>
-            },
-            {
-                path: "component2",
+                path: `${homepageUrl}/component2`,
                 element: <Component2></Component2>
             }
         ]
