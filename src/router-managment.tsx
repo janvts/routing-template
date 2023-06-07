@@ -1,7 +1,7 @@
 import React from 'react';
 import './home.css';
 import './index.css';
-import {createBrowserRouter} from "react-router-dom"
+import {createBrowserRouter, Navigate} from "react-router-dom"
 import {Home} from "./home";
 import ErrorPage from "./components/error-page";
 import {Component1} from "./components/component1";
@@ -14,6 +14,10 @@ const router = createBrowserRouter([
         element: <Home/>,
         errorElement: <ErrorPage/>,
         children: [
+            {
+                path: 'routing-template',
+                element: <Navigate to="/" replace/>
+            },
             {
                 path: "component1",
                 element: <Component1></Component1>
