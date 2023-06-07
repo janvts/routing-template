@@ -4,8 +4,31 @@
 
 ## 1) Router configuration 
 
-The ```` <RouterProvider/>```` Element in index.tsx uses the router configuration that you need to define und export sperately for your whole application, as you can see in the "router-managment.tsx" file.
-It always needs a root component at path "/" but you can use ````<Navigate to="DESTINATION_PATH"/> ````  if you want to go directly to a child.
+The ```` <RouterProvider/>```` Element in index.tsx uses the router configuration that you need to define und export sperately for your whole application. For example this is how it could look like:
+````typescript
+const homepageUrl = process.env.PUBLIC_URL;
+const router = createBrowserRouter([
+
+    {
+        path: `${homepageUrl}`,
+        element: <Home/>,
+        errorElement: <ErrorPage/>,
+        children: [
+            {
+                path: `${homepageUrl}/component1`,
+                element: <Component1></Component1>
+            },
+            {
+                path: `${homepageUrl}/component2`,
+                element: <Component2></Component2>
+            }
+        ]
+    }
+]);
+
+export default router;
+````
+It always needs a root component at the  root path, wich is "/" or "homepageUrl", but you can use ````<Navigate to="DESTINATION_PATH"/> ````  if you want to go directly to a child.
 Also if you need to share states between your components, you can alternatively don't export the router but return the ```` <RouterProvider/>```` and export the App as you usually do like this:
 ````typescript
 function RoutedApp(){
