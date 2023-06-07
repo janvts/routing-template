@@ -4,7 +4,7 @@
 
 ## 1) Router configuration 
 
-The ```` <RouterProvider/>```` Element in index.tsx uses the router configuration that you need to define und export sperately for your whole application.
+The ```` <RouterProvider/>```` Element in index.tsx uses the router configuration that you need to define und export sperately for your whole application, as you can see in the "router-managment.tsx" file.
 It always needs a root component at path "/" but you can use ````<Navigate to="DESTINATION_PATH"/> ````  if you want to go directly to a child.
 Also if you need to share states between your components, you can alternatively don't export the router but return the ```` <RouterProvider/>```` and export the App as you usually do like this:
 ````typescript
