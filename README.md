@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# New to using routing?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The 3 most important things to know!
 
-## Available Scripts
+## 1) Router configuration 
 
-In the project directory, you can run:
+The ```` <RouterProvider/>```` Element in index.tsx uses the router configuration that you need to define und export from here.
+It always needs a root component at path "/" but you can use ````<Navigate to="DESTINATION_PATH"/> ````  if you want to go directly to a child.
+Also if you need to share states between your components, you can alternatively don't export the router but return the ```` <RouterProvider/>```` and export the App as you usually do like this:
+````typescript
+function RoutedApp(){
+    // initialise states here, give them to the components as props!
+    const router = createBrowserRouter([
+        {
+            ....    DEFINE PATHS       ....
+        }
+    ]);
+    return  <RouterProvider router={router}/>
+}
 
-### `npm start`
+function App() {
+    return (
+        <div>
+            <RoutedApp />
+        </div>
+    );
+}
+````
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+But if you do it this way don't forget to change the index.tsx!
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+##  2)  Root component
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You have to declare a root component (here called "home.tsx") for the root path "/" wich typically contains a part of your application that should always be rendered.
+For example, in this application it has to contain the top menu where you can choose the different components from.
+Important: When writing the home component you need to declare where exactly the children components should be rendered inside the home component via the placement of the ````<Outlet/>````  (Look into home.tsx).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 3) Switching between children
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This functionallity also should be set in the home component via the `````<Link to={PATH} />````` (Look into home.tsx).
+Make sure that the path matches identically the declared paths you specified in the router configuration!
