@@ -30,5 +30,5 @@ const router = createHashRouter([
     basename: `${homepageUrl}`,
 });
 
-export default router;
 
+export default router;
