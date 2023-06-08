@@ -11,21 +11,23 @@ const homepageUrl = process.env.PUBLIC_URL;
 const router = createBrowserRouter([
 
     {
-        path: `${homepageUrl}`,
+        path: "/",
         element: <Home/>,
         errorElement: <ErrorPage/>,
         children: [
             {
-                path: `${homepageUrl}/component1`,
+                path: "/component1",
                 element: <Component1></Component1>
             },
             {
-                path: `${homepageUrl}/component2`,
+                path: "/component2",
                 element: <Component2></Component2>
             }
         ]
     }
-]);
+], {
+    basename: `${homepageUrl}`,
+});
 
 export default router;
 
