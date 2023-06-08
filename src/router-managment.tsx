@@ -17,11 +17,11 @@ const router = createHashRouter([
         errorElement: <ErrorPage/>,
         children: [
             {
-                path: "#/component1",
+                path: "/#/component1",
                 element: <Component1></Component1>
             },
             {
-                path: "#/component2",
+                path: "/#/component2",
                 element: <Component2></Component2>
             }
         ]
