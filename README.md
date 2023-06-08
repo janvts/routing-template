@@ -28,6 +28,16 @@ const router = createHashRouter([
 export default router;
 ````
 It always requires a root component at the root path, which is ````"/"````. However, if you want to go directly to a child component, you can use ````<Navigate to="DESTINATION_PATH"/>````.
+````typescript
+children: [
+            ...
+                {
+                    path: "", //Or another path you want to redirect
+                    element: <Navigate to="ADD_DESIRED_COMPONENT" replace/>,
+                },
+            ...
+            ]
+````
 
 The choice of router is also crucial. In this case, we use the hash router, which is typically not recommended. There are several reasons for this. Firstly, it leads to poor URL aesthetics (you will see `````/#/````` in the URL). Additionally, it has limitations in terms of SEO, compatibility with web standards, and manipulating the URL hash fragment without affecting the actual navigation history of the pages. These concerns are better addressed by the browser router. However, we are using hash-based routing here because GitHub Pages only works with hash-based routing. For more information on choosing a router, you can refer to the following link: [Picking a Router](https://reactrouter.com/en/main/routers/picking-a-router). In short, if you are not hosting from GitHub Pages, the common choice is to initialize with createBrowserRouter(...).
 
