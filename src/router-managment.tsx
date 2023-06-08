@@ -12,7 +12,7 @@ const homepageUrl = process.env.PUBLIC_URL;
 const router = createBrowserRouter([
 
     {
-        path: "/*",
+        path: "/",
         element: <Home/>,
         errorElement: <ErrorPage/>,
         children: [
