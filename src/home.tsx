@@ -35,7 +35,7 @@ export const Home: React.FC = () =>{
                         if(item){
                         return(
                         <Menu.Item key={item.key}>
-                            <Link to={`/#/${item.key}`}>{capitalizeFirstLetter(item.key as string)}</Link>
+                            <Link to={`/${item.key}`}>{capitalizeFirstLetter(item.key as string)}</Link>
                         </Menu.Item>
                     )}})}
             </Menu>
