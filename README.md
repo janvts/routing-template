@@ -53,7 +53,7 @@ function RoutedApp(){
     return  <RouterProvider router={router}/>
 }
 
-function App() {
+export function App() {
     return (
         <div>
             <RoutedApp />
