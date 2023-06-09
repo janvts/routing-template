@@ -144,7 +144,28 @@ const router = createBrowserRouter([
     });
 ````
 
+## Using nested routing or non-nested routing?
 
+The configuration in this template uses nested routing. Nested routing means that routes are organized hierarchically, so that you are able to render components inside other components, rather than calling them indepentend of each other requesting a new document.
+If the components of your application are independent of each other and should be accessed via specific URLs, you can use non-nested routing. If that would be the case for this template,  we would configure our router this way:
+
+````template
+const router = useRoutes([
+    {
+      path: '/',
+      element: <Home />,
+      errorElement: <ErrorPage />
+    },
+    {
+      path: '/component1',
+      element: <Component1 />
+    },
+    {
+      path: '/component2',
+      element: <Component2 />
+    }
+  ]);
+````
 
 
 
