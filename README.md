@@ -1,6 +1,6 @@
 # New to using routing?
 
-## The 3 most important things to know!
+## The 3 most important things to know for using this template!
 
 ## 1) Router configuration 
 
@@ -89,10 +89,63 @@ This functionallity also should be set in the root component via the `````<Link 
 Make sure that the path matches identically the declared paths you specified in the router configuration!
 
 
-#  Deploy your app on github pages
+#  Further information
 
-TODO
-### 1) Create a empty repository on GitHub
-### 2) Create a clone of the (still empty) repository in your IDE and create a react app in this repository 
-### 3) TODO
+There are several other important concepts to consider when working with routing that cannot be covered in this brief guide. This guide primarily focuses on setting up basic routing for a template that consists of a top menu.
+However, in the following chapter, we will briefly explore some additional aspects that may be helpful to you.
+
+## Using a custom 404 Page
+
+If your application encounters unmatched routes, you should create a "404 Not Found Page" that matches the style of your website. This page will always be displayed when the user attempts to access a non-existing route. Additionally, redirecting the user from there or providing an option to navigate to an existing page, such as the homepage, will enhance the appeal and user-friendliness of your application.
+The page should be named "404.html" and placed in the public folder. In this template, the user is provided with the option to return to the homepage.
+
+Example:
+````html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
+    <style>
+        /* Add some styling to your 404 page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+<h1>Page Not Found</h1>
+<p>Sorry, but the page you were trying to view does not exist.</p>
+<p>
+    <a href="/routing-template">Go back to the homepage</a>
+</p>
+</body>
+</html>
+````
+Alternatively, you can also write an error element and add it to the router configuration.
+
+
+## Using a basename
+
+In some cases, such as hosting your app in a subdirectory, using different environments, or implementing server-side rendering, the use of a basename can be beneficial.
+To choose the appropriate basename, ensure that it matches the subdirectory or the designated base URL where your app will be hosted. It is recommended to set the host URL as the basename. You can easily retrieve the host URL using ```process.env.PUBLIC_URL``` and add it to the configuration like this:
+````typescript
+const router = createHashRouter([
+
+        {
+            .... YOUR PATHS ...
+        }
+    ],
+    {
+        basename: `${process.env.PUBLIC_UR}`,
+    });
+````
+
+
+
+
+
 
