@@ -125,7 +125,7 @@ Example:
 </body>
 </html>
 ````
-Alternatively, you can also write an error element and add it to the router configuration.
+Alternatively, you can also write an error element and add it to the router configuration, you can also find an example for that in the template.
 
 
 ## Using a basename
@@ -133,7 +133,7 @@ Alternatively, you can also write an error element and add it to the router conf
 In some cases, such as hosting your app in a subdirectory, using different environments, or implementing server-side rendering, the use of a basename can be beneficial.
 To choose the appropriate basename, ensure that it matches the subdirectory or the designated base URL where your app will be hosted. It is recommended to set the host URL as the basename. You can easily retrieve the host URL using ```process.env.PUBLIC_URL``` and add it to the configuration like this:
 ````typescript
-const router = createHashRouter([
+const router = createBrowserRouter([
 
         {
             .... YOUR PATHS ...
