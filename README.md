@@ -144,7 +144,7 @@ const router = createBrowserRouter([
     });
 ````
 
-## Using nested routing or non-nested routing?
+## Choosing between nested and non-nested routing
 
 The configuration in this template uses nested routing. Nested routing means that routes are organized hierarchically, so that you are able to render components inside other components, rather than calling them indepentend of each other requesting a new document.
 If the components of your application are independent of each other and should be accessed via specific URLs, you can use non-nested routing. If that would be the case for this template,  we would configure our router this way:
@@ -166,10 +166,60 @@ const router = useRoutes([
     }
   ]);
 ````
-## Deploying your App on gh-pages
+## Deploying your App on GitHub Pages
 
-For this step, it is assumed that you allready created your app and want to deploy it. 
+To deploy your app on GitHub Pages, follow the steps below:
+
+**(1) Create an empty repository on GitHub**
+
+Create a new repository on GitHub where you'll deploy your app. Note down your repository's URL for later use.
+
+**(2) Install gh-pages in your app**
+
+Run the following command:
+````
+ npm install gh-pages --save-dev
+````
 
 
+**(3) Update package.json**
 
+Open your `package.json` file and add the following properties:
 
+Under the `"version"` property, add a `"homepage"` property. It should contain the URL of your GitHub Pages site, which consists of your GitHub username and repository name. For example:
+
+```json
+{
+  "name": "routing-template",
+  "version": "0.1.0",
+  "homepage": "https://janvts.github.io/routing-template/",
+  ...
+}
+```
+Under the existing "scripts" property, add two new scripts:
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+   ...
+```
+The "predeploy" script runs the build process before deploying, and the "deploy" script deploys your app using gh-pages.
+
+**(4) Add a remote to your repository**
+
+In your app's directory, run the following command to add a remote named "origin" pointing to your repository's URL
+```
+git remote add origin https://github.com/{username}/{repo-name}.git
+```
+If you are prompted for authentication, use a personal access token instead of your regular password to prevent authentication problems. You can generate a personal access token in your GitHub account settings under "Developer settings."
+
+**(5) Deploy your app**
+
+To deploy your app, run the following command:
+````
+npm run deploy
+````
+This command will build your app and deploy it to the gh-pages branch of your repository.
+
+Note: If you experience issues with refreshing or a blank screen on your deployed app, make sure you are using the correct router. Only the hash router can be used with GitHub Pages.
