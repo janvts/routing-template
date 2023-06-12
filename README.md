@@ -166,6 +166,9 @@ const router = useRoutes([
     }
   ]);
 ````
+## Deploying your App on gh-pages
+
+For this step, it is assumed that you allready created your app and want to deploy it. 
 
 
 
