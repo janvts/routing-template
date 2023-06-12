@@ -1,6 +1,6 @@
-# New to using routing?
+# Getting Started with Routing: Key Concepts for Beginners
 
-## The 3 most important things to know for using this template!
+In this brief guide, we will explore the fundamental concepts that are essential for a complete understanding of this template. 
 
 ## 1) Router configuration 
 
