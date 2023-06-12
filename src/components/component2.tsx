@@ -1,5 +1,6 @@
-import React, {useState} from "react";
-import {Breadcrumb, Layout, Menu, MenuProps, theme} from "antd";
+import React from "react";
+import { Layout} from "antd";
+import { Link} from "react-router-dom";
 
 
 export const Component2: React.FC = () =>{
@@ -19,6 +20,7 @@ export const Component2: React.FC = () =>{
                     }}
                 ></div>
             </Layout>
+           <Link to="/">Back to homepage</Link>
         </Layout>
     )
 }

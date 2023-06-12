@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Breadcrumb, Layout, Menu, MenuProps, theme} from "antd";
-import {DesktopOutlined, FileOutlined, PieChartOutlined, TeamOutlined, UserOutlined} from "@ant-design/icons";
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 function getItem(
