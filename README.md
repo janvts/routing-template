@@ -193,7 +193,7 @@ Under the `"version"` property, add a `"homepage"` property. It should contain t
   "name": "routing-template",
   "version": "0.1.0",
   "homepage": "https://janvts.github.io/routing-template/",
-  ...
+  /*...*/
 }
 ```
 Under the existing "scripts" property, add two new scripts:
@@ -202,7 +202,7 @@ Under the existing "scripts" property, add two new scripts:
 "scripts": {
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
-   ...
+   /*...*/
 ```
 The "predeploy" script runs the build process before deploying, and the "deploy" script deploys your app using gh-pages.
 
