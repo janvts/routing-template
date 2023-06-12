@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {Layout, Menu, MenuProps} from "antd";
 import {Outlet, Link, useOutlet} from "react-router-dom";
 import HomeInformation from "./components/homeinformation";
@@ -12,7 +12,6 @@ function capitalizeFirstLetter(input: string): string {
 export const Home: React.FC = () =>{
 
     const outlet = useOutlet() //needed to check conditionally if an Outlet is rendered or not
-
 
     //Modify this function for showing your components, do not forget to add them in router-managment.tsx as well!
     const topMenuItems: MenuProps["items"] = ["component1", "component2"].map(
