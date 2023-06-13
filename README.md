@@ -85,7 +85,7 @@ Example:
 
 ## 3) Switching between children
 
-This functionallity also should be set in the root component via the `````<Link to={PATH} ></Link>````` .
+This functionallity also should be set in the root component via the `````<Link to={PATH} ></Link>````` . There are other ways to do that depending on your needs, e.g. Navlink or useNav, you can read about them [here](https://reactrouter.com/en/main/components/navigate).
 Make sure that the path matches identically the declared paths you specified in the router configuration!
 
 
