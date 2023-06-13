@@ -209,7 +209,7 @@ In your app's directory, run the following command to add a remote named "origin
 ```
 git remote add origin https://github.com/{username}/{repo-name}.git
 ```
-If you are prompted for authentication, use a personal access token instead of your regular password to prevent authentication problems. You can generate a personal access token in your GitHub account settings under "Developer settings."
+**Known Issue:** If you are prompted for authentication, use a personal access token instead of your regular password to prevent authentication problems. You can generate a personal access token in your GitHub account settings under "Developer settings."
 
 **(5) Deploy your app**
 
