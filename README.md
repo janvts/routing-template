@@ -83,10 +83,11 @@ Example:
 ````
 
 
-## 3) Switching between children
+## 3) Navigation trough the routed components
 
-This functionallity also should be set in the root component via the `````<Link to={PATH} ></Link>````` . There are other ways to do that depending on your needs, e.g. Navlink or useNav, you can read about them [here](https://reactrouter.com/en/main/components/navigate).
-Make sure that the path matches identically the declared paths you specified in the router configuration!
+This functionallity also should be set in the root component via the `````<Link to={PATH} ></Link>````` . There are other ways to switch depending on your needs, e.g. Navlink (another version of Link) or useNavigate (automatically switching), you can read about them [here](https://reactrouter.com/en/main/components/navigate). To assure the right highlighting of the selected element in your menu, you can use ``useLocation``. 
+It contains the currently selected path.
+But no matter what you do or what you use, make sure that the path matches identically the declared paths you specified in the router configuration!
 
 
 #  Further information

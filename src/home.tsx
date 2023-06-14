@@ -1,6 +1,6 @@
 import React from "react";
 import {Layout, Menu, MenuProps} from "antd";
-import {Outlet, Link, useOutlet, NavLink} from "react-router-dom";
+import {Outlet, Link, useOutlet, NavLink, useNavigate, useLocation} from "react-router-dom";
 import HomeInformation from "./components/homeinformation";
 const { Header} = Layout;
 
@@ -11,7 +11,10 @@ function capitalizeFirstLetter(input: string): string {
 
 export const Home: React.FC = () =>{
 
+    const navigate = useNavigate(); //needed to navigate automatically inside a function
     const outlet = useOutlet() //needed to check conditionally if an Outlet is rendered or not
+    const location = useLocation(); // get the currently selected path
+    const selectedKey = location.pathname.substring(1);
 
     //Modify this function for showing your components, do not forget to add them in router-managment.tsx as well!
     const topMenuItems: MenuProps["items"] = ["component1", "component2"].map(
@@ -20,15 +23,21 @@ export const Home: React.FC = () =>{
             label: `${capitalizeFirstLetter(key)}`,
         })
     );
+
+    function backToHome(){
+        navigate("/")
+    }
+
     return(
         <Layout>
-            <Header className="header">
-                <div className='logo'>
-                    <img src={`${process.env.PUBLIC_URL}/TMDT_Logo_light_complete.png`} alt="logo" />
+            <Header className="header" >
+                <div className='logo'  onClick={backToHome} style={{ cursor: 'pointer' }}>
+                    <img src={`${process.env.PUBLIC_URL}/TMDT_Logo_light_complete.png`} alt="logo"/>
                 </div>
                 <Menu
                     theme="dark"
                     mode="horizontal"
+                    selectedKeys={[selectedKey]}
                     >
                     {topMenuItems.map((item) =>{
                         if(item){
